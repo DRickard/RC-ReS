@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<jboss-web>
+    <resource-ref>
+        <res-ref-name>jdbc/irma</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <jndi-name>java:/irma</jndi-name>
+    </resource-ref>
+    <resource-ref>
+        <res-ref-name>jdbc/magi</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <jndi-name>java:/magi</jndi-name>
+    </resource-ref>
+</jboss-web>

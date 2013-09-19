@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5" xmlns="http://java.sun.com/xml/ns/javaee">
+  <servlet>
+    <servlet-name>Jersey REST Service</servlet-name>
+    <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <param-name>com.sun.ws.rest.config.property.resourceConfigClass</param-name>
+      <param-value>com.sun.ws.rest.api.core.PackagesResourceConfig</param-value>
+    </init-param>
+    <init-param>
+      <param-name>com.sun.jersey.config.property.packages</param-name>
+      <param-value>edu.ucla.library.libservices.rswrapper.webservices;org.codehaus.jackson.jaxrs</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Jersey REST Service</servlet-name>
+    <url-pattern>/*</url-pattern>
+  </servlet-mapping>
+  <context-param>
+	<param-name>datasource.irma</param-name>
+	<param-value>java:comp/env/jdbc/irma</param-value>
+  </context-param>
+  <context-param>
+	<param-name>datasource.magi</param-name>
+	<param-value>java:comp/env/jdbc/magi</param-value>
+  </context-param>
+  <context-param>
+    <param-name>datasource.hours</param-name>
+    <param-value>java:/scheduleDS</param-value>
+  </context-param>
+  <context-param>
+    <param-name>datasource.oracle</param-name>
+    <param-value>java:/rssDS</param-value>
+  </context-param>
+  <context-param>
+	<param-name>user.auth</param-name>
+	<param-value>ad\clicc</param-value>
+  </context-param>
+  <context-param>
+	<param-name>pass.auth</param-name>
+	<param-value>H3lpdesk</param-value>
+  </context-param>
+  <context-param>
+	<param-name>user.rs</param-name>
+	<param-value>clicc</param-value>
+  </context-param>
+  <resource-ref>
+    <description>IRMA</description>
+    <res-ref-name>jdbc/irma</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  <resource-ref>
+    <description>MAGI</description>
+    <res-ref-name>jdbc/magi</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+</web-app>

@@ -411,8 +411,8 @@ public class RoomSchedule
 
     for ( Reservation s:
           magi.returnHoursOfOperation( ( locale.equalsIgnoreCase( "yrl" ) ?
-                                         Constants.SETOURS_RC_ID:
-                                         Constants.SETOURS_SR_ID ),
+                                         Constants.SETHOURS_RC_ID:
+                                         Constants.SETHOURS_SR_ID ),
                                        // Constants.MAGI_RC_ID,
         this.basetime, this.endtime ) )
     {

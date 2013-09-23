@@ -29,19 +29,19 @@ public class ReservationsGeneratorForGroup
   extends Generator
 {
   private static final String ALL_ROOMS_QUERY =
-    "SELECT * FROM RedESoft.dbo.vw_rc_rooms_test ORDER BY display_order";
-    //"SELECT * FROM RedESoft.dbo.vw_rc_rooms ORDER BY display_order";
+    //"SELECT * FROM RedESoft.dbo.vw_rc_rooms_test ORDER BY display_order";
+    "SELECT * FROM RedESoft.dbo.vw_rc_rooms ORDER BY display_order";
   private static final String ROOMS_BY_GROUP_QUERY =
-    "SELECT * FROM RedESoft.dbo.vw_rc_rooms_test WHERE grp_id = ? ORDER BY display_order";
-    //"SELECT * FROM RedESoft.dbo.vw_rc_rooms WHERE grp_id = ? ORDER BY display_order";
+    //"SELECT * FROM RedESoft.dbo.vw_rc_rooms_test WHERE grp_id = ? ORDER BY display_order";
+    "SELECT * FROM RedESoft.dbo.vw_rc_rooms WHERE grp_id = ? ORDER BY display_order";
   private static final String RESERVATIONS_QUERY =
-    //"SELECT * FROM RedESoft.dbo.vw_rc_reservations WHERE ( (startDate >= ? AND" +
-    "SELECT * FROM RedESoft.dbo.vw_rc_reservations_test WHERE ( (startDate >= ? AND" +
+    "SELECT * FROM RedESoft.dbo.vw_rc_reservations WHERE ( (startDate >= ? AND" +
+    //"SELECT * FROM RedESoft.dbo.vw_rc_reservations_test WHERE ( (startDate >= ? AND" +
     " startDate <= ?) OR (endDate >= ? AND endDate <= ?) OR (startDate <= ? AND " +
     "endDate >= ?) ) ORDER BY display_order, startDate";
   private static final String UDFS_QUERY =
-    //"SELECT * FROM RedESoft.dbo.vw_rc_udfs WHERE ( (startDate >= ? AND startDate" +
-    "SELECT * FROM RedESoft.dbo.vw_rc_udfs_test WHERE ( (startDate >= ? AND startDate" +
+    "SELECT * FROM RedESoft.dbo.vw_rc_udfs WHERE ( (startDate >= ? AND startDate" +
+    //"SELECT * FROM RedESoft.dbo.vw_rc_udfs_test WHERE ( (startDate >= ? AND startDate" +
     " <= ?) OR (endDate >= ? AND endDate <= ?) OR (startDate <= ? AND endDate >= ?) )";
 
   @SuppressWarnings( "unchecked" )

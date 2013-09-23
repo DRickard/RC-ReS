@@ -44,7 +44,7 @@ public class AvailabileService
     super();
   }
 
-  @JsonView( ReservationViews.FullReservation.class )
+  /*@JsonView( ReservationViews.FullReservation.class )
   @GET
   @Path( "resource/{resourceName}" )
   @Produces( "application/json" )
@@ -172,5 +172,5 @@ public class AvailabileService
         throw new WebApplicationException( ErrorResponse.INVALID_DATETIME_FORMAT );
       }
     }
-  }
+  }*/
 }

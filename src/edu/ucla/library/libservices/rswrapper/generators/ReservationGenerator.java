@@ -17,8 +17,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 public class ReservationGenerator
 {
   private static final String RES_BY_UID =
-    //"SELECT * FROM RedESoft.dbo.vw_rc_res_by_udf WHERE udf_val = ? AND startDate >= (GETDATE() - 1)ORDER BY startDate, display_order";
-    "SELECT * FROM RedESoft.dbo.vw_rc_res_by_udf_test WHERE udf_val = ? AND startDate >= (GETDATE() - 1) ORDER BY startDate, display_order";
+    "SELECT * FROM RedESoft.dbo.vw_rc_res_by_udf WHERE udf_val = ? AND startDate >= (GETDATE() - 1)ORDER BY startDate, display_order";
+    //"SELECT * FROM RedESoft.dbo.vw_rc_res_by_udf_test WHERE udf_val = ? AND startDate >= (GETDATE() - 1) ORDER BY startDate, display_order";
 
   private DataSource ds;
   private String dbName;

@@ -42,11 +42,12 @@ public class AvailableReservationsService
 
   @JsonView( ReservationViews.AvailableSlot.class )
   @GET
-  @Path( "complete/startingat/{time}/length/{numHalfHours}" )
+  @Path( "complete/startingat/{time}/length/{numHalfHours}/where/{locale}" )
   @Produces( "application/json" )
   public List<Reservation> getOpenRoomsAtTimeMaxLength( @PathParam( "time" )
     String startParam, @PathParam( "numHalfHours" )
-    int numHalfHours )
+    int numHalfHours, @PathParam( "locale" )
+    String locale )
   {
     AvailableRoomsInLocationGenerator generator;
 
@@ -68,18 +69,19 @@ public class AvailableReservationsService
     // Invoke the generator
     generator = new AvailableRoomsInLocationGenerator();
     generator.setDbName( config.getServletContext().getInitParameter( "datasource.irma" ) );
-    generator.setMagidb( config.getServletContext().getInitParameter( "datasource.magi" ) );
+    generator.setMagidb( config.getServletContext().getInitParameter( "datasource.hours" ) );
     return generator.getAvailableRoomsInLocationAtStartTimeMaxTime( start,
-                                                                    numHalfHours );
+                                                                    numHalfHours, locale );
   }
 
   @JsonView( ReservationViews.AvailableSlot.class )
   @GET
-  @Path( "startingat/{time}/length/{numHalfHours}" )
+  @Path( "startingat/{time}/length/{numHalfHours}/where/{locale}" )
   @Produces( "application/json" )
   public List<Reservation> getOpenRoomsAtTime( @PathParam( "time" )
     String startParam, @PathParam( "numHalfHours" )
-    int numHalfHours )
+    int numHalfHours, @PathParam( "locale" )
+    String locale )
   {
     AvailableRoomsInLocationGenerator generator;
 
@@ -101,9 +103,9 @@ public class AvailableReservationsService
     // Invoke the generator
     generator = new AvailableRoomsInLocationGenerator();
     generator.setDbName( config.getServletContext().getInitParameter( "datasource.irma" ) );
-    generator.setMagidb( config.getServletContext().getInitParameter( "datasource.magi" ) );
+    generator.setMagidb( config.getServletContext().getInitParameter( "datasource.hours" ) );
     return generator.getAvailableRoomsInLocationAtStartTime( start,
-                                                             numHalfHours );
+                                                             numHalfHours, locale );
   }
 
   /*
@@ -118,12 +120,13 @@ public class AvailableReservationsService
 
   @JsonView( ReservationViews.AvailableSlot.class )
   @GET
-  @Path( "after/{time}/until/{spanLength}/length/{meetLength}" )
+  @Path( "after/{time}/until/{spanLength}/length/{meetLength}/where/{locale}}" )
   @Produces( "application/json" )
   public List<Reservation> getOpenRoomsAfterTime( @PathParam( "time" )
     String startParam, @PathParam( "spanLength" )
     int spanLength, @PathParam( "meetLength" )
-    int meetLength )
+    int meetLength, @PathParam( "locale" )
+    String locale )
   {
     AvailableRoomsInLocationGenerator generator;
 
@@ -145,19 +148,20 @@ public class AvailableReservationsService
     // Invoke the generator
     generator = new AvailableRoomsInLocationGenerator();
     generator.setDbName( config.getServletContext().getInitParameter( "datasource.irma" ) );
-    generator.setMagidb( config.getServletContext().getInitParameter( "datasource.magi" ) );
+    generator.setMagidb( config.getServletContext().getInitParameter( "datasource.hours" ) );
     return generator.getAvailableRoomsInLocationAfterStart( start,
                                                             meetLength,
-                                                            spanLength );
+                                                            spanLength, locale );
   }
 
   @JsonView( ReservationViews.AvailableSlot.class )
   @GET
-  @Path( "before/{time}/length/{numHalfHours}" )
+  @Path( "before/{time}/length/{numHalfHours}/where/{locale}" )
   @Produces( "application/json" )
   public List<Reservation> getOpenRoomsBeforeTime( @PathParam( "time" )
     String startParam, @PathParam( "numHalfHours" )
-    int numHalfHours )
+    int numHalfHours, @PathParam( "locale" )
+    String locale )
   {
     AvailableRoomsInLocationGenerator generator;
 
@@ -179,9 +183,9 @@ public class AvailableReservationsService
     // Invoke the generator
     generator = new AvailableRoomsInLocationGenerator();
     generator.setDbName( config.getServletContext().getInitParameter( "datasource.irma" ) );
-    generator.setMagidb( config.getServletContext().getInitParameter( "datasource.magi" ) );
+    generator.setMagidb( config.getServletContext().getInitParameter( "datasource.hours" ) );
     return generator.getAvailableRoomsInLocationBeforeStart( start,
-                                                             numHalfHours );
+                                                             numHalfHours, locale );
   }
 }
     //,@DefaultValue( "" ) @QueryParam( "uid" ) String uid )

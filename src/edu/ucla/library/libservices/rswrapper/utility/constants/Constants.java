@@ -33,9 +33,9 @@ public class Constants
   //RC = Research Commons
   //SR = Powell Study Rooms
   public static final int DATE_PARAM_COUNT = 6;
-  public static final int[] RC_GROUP_IDS = {82,83}; //{56,79}
+  public static final int[] RC_GROUP_IDS = {56,79}; //{82,83}
   public static final int[] SR_GROUP_IDS = {58}; //{56,79}
   public static final int MAGI_RC_ID = 19;
-  public static final int SETOURS_RC_ID = 56;
-  public static final int SETOURS_SR_ID = 54;
+  public static final int SETHOURS_RC_ID = 48;
+  public static final int SETHOURS_SR_ID = 54;
 }

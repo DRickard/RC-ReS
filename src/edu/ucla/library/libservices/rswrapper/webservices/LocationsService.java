@@ -35,7 +35,7 @@ public class LocationsService {
 		super();
 	}
 	
-	@JsonView(ReservationViews.StartEndPair.class)
+	/*@JsonView(ReservationViews.StartEndPair.class)
 	@GET
 	@Path("{groupCode}/{date}")
 	@Produces("application/json")
@@ -70,5 +70,5 @@ public class LocationsService {
 		generator = new LocationsGeneratorForGroup();
 		generator.setDbName(dbname);
 		return generator.getRoomAvailableTimes(loc, startDate, endDate);
-	}
+	}*/
 }

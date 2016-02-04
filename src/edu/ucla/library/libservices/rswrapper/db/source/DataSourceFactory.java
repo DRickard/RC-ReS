@@ -35,9 +35,9 @@ public class DataSourceFactory
     DriverManagerDataSource ds = new DriverManagerDataSource();
 
     ds.setDriverClassName( "com.microsoft.sqlserver.jdbc.SQLServerDriver" );
-    ds.setUrl( "jdbc:sqlserver://db-mrm.library.ucla.edu:1433" );
-    ds.setUsername( "irma_rpt" );
-    ds.setPassword( "irma_rpt_pwd" );
+    ds.setUrl( "sqlserver_url" );
+    ds.setUsername( "sqlserver_user" );
+    ds.setPassword( "sqlserver_pwd" );
 
     return ds;
   }
@@ -48,9 +48,9 @@ public class DataSourceFactory
 
     ds = new DriverManagerDataSource();
     ds.setDriverClassName( "oracle.jdbc.OracleDriver" );
-    ds.setUrl( "jdbc:oracle:thin:@ils-db-prod.library.ucla.edu:1521:VGER" );
-    ds.setUsername( "vger_support" );
-    ds.setPassword( "vger_support_pwd" );
+    ds.setUrl( "oracle_url" );
+    ds.setUsername( "oracle_user" );
+    ds.setPassword( "oracle_pwd" );
 
     return ds;
   }
@@ -61,9 +61,9 @@ public class DataSourceFactory
 
     ds = new DriverManagerDataSource();
     ds.setDriverClassName( "com.microsoft.sqlserver.jdbc.SQLServerDriver" );
-    ds.setUrl( "jdbc:sqlserver://sqlprod.library.ucla.edu:1433" );
-    ds.setUsername( "magi_web" );
-    ds.setPassword( "magi_web_pwd" );
+    ds.setUrl( "other_sqlserver_url" );
+    ds.setUsername( "other_sqlserver_user" );
+    ds.setPassword( "other_sqlserver__pwd" );
 
     return ds;
   }
@@ -74,9 +74,9 @@ public class DataSourceFactory
 
     ds = new DriverManagerDataSource();
     ds.setDriverClassName( "com.microsoft.sqlserver.jdbc.SQLServerDriver" );
-    ds.setUrl( "jdbc:sqlserver://db-libraryweb.library.ucla.edu:1433" );
-    ds.setUsername( "Hours_Update" );
-    ds.setPassword( "Hours_Update_pwd" );
+    ds.setUrl( "third_sqlserver_url" );
+    ds.setUsername( "third_sqlserver_user" );
+    ds.setPassword( "third_sqlserver__pwd" );
 
     return ds;
   }
